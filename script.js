@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const CONFIG = {
-        whatsappNumber: '5491123455432'
+        whatsappNumber: '5491152608880'
     };
 
     function initializeSite() {

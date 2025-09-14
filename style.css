@@ -109,7 +109,7 @@ nav a:hover { color: var(--hero-bg); }
 
 
 
-.section-divider { border: 0; height: 1px; background-color: var(--divider-light); margin: 40px auto; max-width: 1200px; }
+.section-divider { border: 0; height: 1px; background-color: var(--divider-light); margin: 10px auto; max-width: 1200px; }
 .cta-button { display: inline-flex; align-items: center; gap: 10px; background-color: var(--yellow-cta); padding: 16px 32px; border-radius: 12px; text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 1rem; transition: transform 0.3s ease, filter 0.3s ease; }
 .cta-button:hover { transform: scale(1.05); filter: brightness(1.1); }
 .cta-button.secondary { background-color: transparent; border: 2px solid var(--brand-purple); color: var(--brand-purple); }
