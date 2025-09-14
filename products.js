@@ -328,9 +328,12 @@ const ALL_IMAGES = {
     ctaGiraffe: 'images/cta-giraffe.webp',
     aboutUsPhoto: 'images/about-us-photo.webp',
 
-    heroImage1: 'images/hero-1.jpg',
-    heroImage2: 'images/hero-2.jpg',
-    heroImage3: 'images/hero-3.jpg',
+    heroImage1: 'images/hero-1.webp',
+    heroImage2: 'images/hero-2.webp',
+    heroImage3: 'images/hero-3.webp',
+    heroImage4: 'images/hero-4.webp',
+    heroImage5: 'images/hero-5.webp',
+    heroImage6: 'images/hero-6.webp',
 
 
     ajuarBatita: 'images/ajuar-batita.webp',

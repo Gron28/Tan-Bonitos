@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const track = document.querySelector('.carousel-track');
         if (!track) return;
         const dotsContainer = document.querySelector('.carousel-dots');
-        const heroImages = [ALL_IMAGES.heroImage1, ALL_IMAGES.heroImage2, ALL_IMAGES.heroImage3];
+        const heroImages = [ALL_IMAGES.heroImage1, ALL_IMAGES.heroImage2, ALL_IMAGES.heroImage3, ALL_IMAGES.heroImage4, ALL_IMAGES.heroImage5, ALL_IMAGES.heroImage6];
         let currentIndex = 0;
         let autoPlayInterval = null;
         track.innerHTML = '';
