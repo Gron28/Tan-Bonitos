@@ -44,7 +44,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('img[data-img-key]').forEach(el => {
             if (ALL_IMAGES[el.dataset.imgKey]) {
                 el.src = ALL_IMAGES[el.dataset.imgKey];
-                el.loading = 'lazy';
+                if (el.dataset.imgKey === 'heroImage1') {
+                    el.setAttribute('fetchpriority', 'high');
+                } else {
+                    el.loading = 'lazy';
+                }
             }
         });
 
@@ -95,9 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dotsContainer) dotsContainer.innerHTML = '';
 
         heroImages.forEach((src, i) => {
-            track.innerHTML += `<div class="carousel-slide"><img src="${src}" alt="Producto destacado ${i + 1}"></div>`;
+            const priority = i === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
+            track.innerHTML += `<div class="carousel-slide"><img src="${src}" alt="Producto destacado ${i + 1}" ${priority}></div>`;
             if (dotsContainer) dotsContainer.innerHTML += `<div class="dot" data-index="${i}"></div>`;
         });
+        
 
         const slides = Array.from(track.children);
         const dots = dotsContainer ? Array.from(dotsContainer.children) : [];
