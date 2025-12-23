@@ -1,0 +1,22 @@
+{
+  "name": "tan-bonitos",
+  "version": "1.0.0",
+  "description": "Product catalog website for Tan Bonitos!, a handmade baby goods artisan brand from Argentina.",
+  "scripts": {
+    "sass": "sass src/styles/main.scss:style.css --style=compressed",
+    "sass:watch": "sass src/styles/main.scss:style.css --watch",
+    "sass:dev": "sass src/styles/main.scss:style.css --style=expanded --source-map"
+  },
+  "keywords": [
+    "baby-products",
+    "handmade",
+    "catalog",
+    "argentina",
+    "e-commerce"
+  ],
+  "author": "Felipe Villada",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

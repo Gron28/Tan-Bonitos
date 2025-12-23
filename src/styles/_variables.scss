@@ -1,0 +1,29 @@
+// ==========================================================================
+// VARIABLES
+// Brand colors, typography, and global design tokens
+// ==========================================================================
+
+// Colors
+$bg-cream: #F9F6FF;
+$hero-bg: #8F8ED7;
+$brand-purple: #5857A9;
+$dark-purple: #332D59;
+$text-dark: #332D59;
+$text-body: #6A6893;
+$yellow-cta: #F2AF14;
+$white: #FFFFFF;
+$divider-light: #E0DDEE;
+
+// Typography
+$font-title: 'Paprika', cursive;
+$font-body: 'Onest', sans-serif;
+
+// Layout
+$header-height: 155px;
+$header-height-scrolled: 80px;
+$max-width: 1200px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;

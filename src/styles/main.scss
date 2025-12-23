@@ -1,0 +1,26 @@
+// ==========================================================================
+// TAN BONITOS! - Main Stylesheet
+// ==========================================================================
+// A product catalog for handmade baby goods from Argentina.
+// Compiled with: npm run sass
+// ==========================================================================
+
+// Configuration (must be loaded first with @use)
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Foundation
+@use 'base';
+
+// Layout
+@use 'header';
+@use 'footer';
+
+// UI Components
+@use 'components';
+
+// Page-Specific Styles
+@use 'pages';
+
+// Responsive Overrides
+@use 'responsive';

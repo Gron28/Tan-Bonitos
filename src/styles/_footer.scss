@@ -1,0 +1,135 @@
+// ==========================================================================
+// FOOTER
+// Site footer with navigation, contact, and social links
+// ==========================================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.site-footer {
+    background-color: $dark-purple;
+    color: $white;
+    padding: 70px 5% 25px;
+}
+
+.footer-container {
+    max-width: $max-width;
+    margin: 0 auto 50px auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.footer-column {
+    h3 {
+        font-family: $font-body;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 20px;
+        opacity: 0.9;
+        color: $white;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 12px;
+    }
+
+    a,
+    p {
+        text-decoration: none;
+        color: $white;
+        font-size: 0.95rem;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+    }
+
+    a:hover {
+        opacity: 1;
+    }
+}
+
+.footer-column-brand {
+    // Extends .footer-column, positioned first
+}
+
+.footer-logo-link {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.footer-logo {
+    width: 135px;
+}
+
+.footer-tagline {
+    max-width: 280px;
+    line-height: 1.6;
+}
+
+.footer-contact-info {
+    margin-bottom: 25px;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    i {
+        color: $hero-bg;
+        width: 20px;
+        text-align: center;
+    }
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+
+    a {
+        @include flex-center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        font-size: 1.1rem;
+        color: $white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+            background-color: $brand-purple;
+            transform: translateY(-3px);
+            opacity: 1;
+        }
+    }
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.footer-credit {
+    margin-top: 8px;
+
+    a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: underline;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}

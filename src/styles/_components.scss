@@ -1,0 +1,425 @@
+// ==========================================================================
+// COMPONENTS
+// Reusable UI elements: buttons, cards, carousel, accordion
+// ==========================================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Hero Section
+.hero {
+    background-color: $hero-bg;
+    padding: 50px 0 60px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-subtitle {
+    font-family: $font-title;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: $white;
+    max-width: 700px;
+    margin: 30px auto 0;
+    line-height: 1.5;
+}
+
+// Carousel
+.carousel-wrapper {
+    position: relative;
+    max-width: 40vw;
+    height: 450px;
+    margin: auto;
+    user-select: none;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s ease;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 22px;
+    }
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 110%;
+    left: -5%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-wrapper:hover .carousel-controls {
+    opacity: 1;
+}
+
+.carousel-button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    color: $brand-purple;
+    font-size: 1.5rem;
+    pointer-events: all;
+    transition: transform 0.3s ease;
+    @include flex-center;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.carousel-dots {
+    margin-top: 20px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+        background-color: $white;
+        transform: scale(1.2);
+    }
+}
+
+// CTA Buttons
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: $yellow-cta;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: $text-dark;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+    }
+
+    &.secondary {
+        background-color: transparent;
+        border: 2px solid $brand-purple;
+        color: $brand-purple;
+
+        &:hover {
+            background-color: $brand-purple;
+            color: $white;
+        }
+    }
+}
+
+.section-cta-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+// Product Cards
+.product-card {
+    text-align: center;
+
+    h3 {
+        font-family: $font-title;
+        font-size: 1.2rem;
+        color: $text-dark;
+        font-weight: 400;
+    }
+}
+
+.product-card-image {
+    width: 100%;
+    border-radius: 24px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    @include card-hover;
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+.home-product-card-link,
+.product-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+    &:hover .product-card-image {
+        transform: scale(1.03);
+    }
+}
+
+// Section Headers
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h1 {
+        font-family: $font-title;
+        font-size: clamp(2.5rem, 6vw, 3rem);
+        color: $brand-purple;
+    }
+
+    h2 {
+        font-family: $font-title;
+        font-size: clamp(2rem, 5vw, 2.5rem);
+        color: $brand-purple;
+    }
+
+    p {
+        font-family: $font-body;
+        font-size: 1.1rem;
+        color: $text-body;
+        margin-top: 5px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.subtitle-divider {
+    width: 50px;
+    height: 2px;
+    background-color: $divider-light;
+    margin: 15px auto 0;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: $divider-light;
+    margin: 10px auto;
+    max-width: $max-width;
+}
+
+// Testimonial Section
+.testimonial-section {
+    background-color: $hero-bg;
+    color: $white;
+    padding: 60px 5%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-content {
+    max-width: 700px;
+    margin: auto;
+
+    h2 {
+        font-family: $font-title;
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
+        margin-bottom: 20px;
+    }
+
+    blockquote {
+        p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        footer {
+            margin-top: 15px;
+            font-weight: 700;
+            font-style: normal;
+        }
+    }
+}
+
+// CTA Section
+.cta-section {
+    background-color: $hero-bg;
+    padding: 80px 5%;
+    text-align: center;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    h2 {
+        font-family: $font-title;
+        font-size: clamp(2rem, 5vw, 2.5rem);
+    }
+
+    p {
+        font-family: $font-body;
+        margin: 15px auto 30px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 450px;
+        opacity: 0.9;
+    }
+}
+
+.cta-content {
+    max-width: 550px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-giraffe {
+    position: absolute;
+    bottom: -20px;
+    right: -80px;
+    width: 200px;
+    opacity: 0.35;
+    transform: rotate(-15deg);
+}
+
+// Accordion
+.accordion-container {
+    max-width: 800px;
+    margin: 30px auto 0;
+}
+
+.accordion-item {
+    border-bottom: 1px solid $divider-light;
+
+    &:first-child {
+        border-top: 1px solid $divider-light;
+    }
+
+    &.is-open .accordion-icon {
+        transform: rotate(45deg);
+    }
+}
+
+.accordion-trigger {
+    background: none;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: $font-body;
+    color: $text-dark;
+    cursor: pointer;
+    text-align: left;
+
+    &:hover {
+        color: $brand-purple;
+    }
+}
+
+.accordion-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 16px;
+        height: 2px;
+        background-color: currentColor;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s ease;
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 15px;
+    font-size: 1rem;
+    color: $text-body;
+    line-height: 1.7;
+
+    p,
+    ul {
+        padding-bottom: 20px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+}
+
+// WhatsApp Float Button
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    border-radius: 50%;
+    z-index: 100;
+    @include flex-center;
+    text-decoration: none;
+    color: $white;
+    font-size: 2.2rem;
+    transform: scale(0);
+    animation: pop-in 0.5s 1s forwards cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes pop-in {
+    to {
+        transform: scale(1);
+    }
+}
+
+// Reveal Animation
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

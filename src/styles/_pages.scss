@@ -1,0 +1,423 @@
+// ==========================================================================
+// PAGES
+// Page-specific layouts and styles
+// ==========================================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Product Sections (Homepage)
+.product-section,
+.page-main-content {
+    padding: 80px 5%;
+    max-width: $max-width;
+    margin: auto;
+}
+
+// Homepage Product Grids
+#ajuares .product-grid,
+#accesorios .product-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+
+    @include respond-to('sm') {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#ajuares .product-card-image,
+#accesorios .product-card-image {
+    aspect-ratio: 2 / 1;
+}
+
+#colitas .product-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+
+    @include respond-to('lg') {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+#colitas .product-card-image {
+    aspect-ratio: 1 / 1;
+}
+
+// Category Pages & Related Products
+.page-main-content .product-grid,
+#related-products-section .product-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+
+    @include respond-to('md') {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.page-main-content .product-card-image,
+#related-products-section .product-card-image {
+    aspect-ratio: 1 / 1;
+}
+
+.page-main-content .product-grid .product-card-link,
+#related-products-section .product-grid .product-card-link {
+    @include respond-to('md') {
+        flex: 0 1 220px;
+    }
+}
+
+// Other Collections Grid
+.other-collections-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 30px auto 0;
+    max-width: 1100px;
+
+    @include respond-to('md') {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .collection-card-image {
+        aspect-ratio: 2 / 1;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// Category Page Layouts
+.page-main-content {
+    min-height: 70vh;
+}
+
+.breadcrumb-container {
+    padding-bottom: 20px;
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: $text-body;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $brand-purple;
+    }
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h1 {
+        font-size: clamp(2.5rem, 6vw, 3rem);
+    }
+}
+
+.category-subheader {
+    font-family: $font-title;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    color: $text-dark;
+    margin: 60px 0 25px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $divider-light;
+}
+
+.other-collections {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid $divider-light;
+}
+
+.collection-card {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    h3 {
+        font-family: $font-title;
+        font-size: 1.8rem;
+        color: $brand-purple;
+    }
+
+    p {
+        color: $text-body;
+        margin-top: 5px;
+    }
+
+    &:hover .collection-card-image {
+        transform: scale(1.03) translateY(-5px);
+    }
+}
+
+.collection-card-image {
+    transition: transform 0.4s ease;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    img {
+        width: 100%;
+    }
+}
+
+// Product Detail Page (PDP)
+.pdp-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.pdp-gallery {
+    position: sticky;
+    top: calc($header-height-scrolled + 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pdp-main-image-wrapper {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: $divider-light;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.pdp-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+
+    img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+
+        &:hover {
+            border-color: $divider-light;
+        }
+
+        &.active-thumbnail {
+            border-color: $brand-purple;
+        }
+    }
+}
+
+.pdp-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+        font-family: $font-title;
+        font-size: clamp(2.2rem, 5vw, 2.8rem);
+        color: $brand-purple;
+        line-height: 1.2;
+    }
+}
+
+.pdp-price {
+    display: none;
+}
+
+.pdp-description p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $text-body;
+}
+
+.pdp-details-section {
+    margin-top: 20px;
+    border-top: 1px solid $divider-light;
+    padding-top: 25px;
+
+    h3 {
+        font-family: $font-body;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    ul {
+        list-style-position: inside;
+        padding-left: 5px;
+        color: $text-body;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+.pdp-cta {
+    margin-top: 20px;
+    padding: 20px 35px;
+    font-size: 1.1rem;
+    justify-content: center;
+}
+
+// About Us Page
+.about-us-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-us-content {
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: $text-body;
+
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 6vw, 3rem);
+        margin-bottom: 20px;
+    }
+}
+
+.about-us-image img {
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+}
+
+// Contact Section
+.contact-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.contact-list {
+    list-style: none;
+    margin-top: 30px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 1.2rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: $text-dark;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $brand-purple;
+        }
+    }
+
+    .fas,
+    .fab {
+        color: $brand-purple;
+        width: 25px;
+        text-align: center;
+    }
+}
+
+.help-section {
+    padding-top: 40px;
+}
+
+// Wholesale Page
+.wholesale-hero-image {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/hero-2.jpg') center/cover no-repeat;
+    height: 350px;
+    border-radius: 18px;
+    margin-bottom: 60px;
+}
+
+.wholesale-section {
+    padding: 40px 0;
+}
+
+.value-prop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.value-prop-item {
+    i {
+        font-size: 2.5rem;
+        color: $brand-purple;
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+
+    h3 {
+        font-family: $font-title;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+}
+
+.how-it-works-section {
+    background-color: $white;
+    padding: 80px 5%;
+    margin: 40px -5%;
+}
+
+.how-it-works {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $hero-bg;
+    color: $white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    @include flex-center;
+}
+
+.step-text {
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+}

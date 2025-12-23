@@ -1,0 +1,128 @@
+// ==========================================================================
+// RESPONSIVE
+// Mobile and tablet breakpoint overrides
+// ==========================================================================
+
+@use 'variables' as *;
+
+@media (max-width: $breakpoint-lg) {
+
+    header,
+    header.scrolled {
+        height: $header-height-scrolled;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .logo-container {
+        margin-bottom: 0;
+    }
+
+    .logo-img-big {
+        display: none;
+    }
+
+    .logo-img-small {
+        display: block;
+        width: 150px;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: $dark-purple;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        padding: 120px 40px;
+        z-index: 1001;
+
+        &.nav-open {
+            transform: translateX(0);
+        }
+
+        ul {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 25px;
+        }
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    .carousel-wrapper {
+        max-width: 80vw;
+        height: 350px;
+    }
+
+    .pdp-container {
+        grid-template-columns: 1fr;
+    }
+
+    .pdp-gallery {
+        position: static;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-column-brand {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+
+    .product-section,
+    .page-main-content {
+        padding: 60px 5%;
+    }
+
+    .carousel-wrapper {
+        max-width: 90vw;
+        height: 300px;
+    }
+
+    .hero {
+        padding-bottom: 40px;
+    }
+
+    .hero-subtitle {
+        margin-top: 20px;
+    }
+
+    .about-us-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-column-brand,
+    .footer-column {
+        align-items: center;
+    }
+
+    .footer-contact-info li,
+    .footer-socials {
+        justify-content: center;
+    }
+}
