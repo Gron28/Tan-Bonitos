@@ -1,16 +1,16 @@
-# Tan Bonitos! 🧸
+# Tan Bonitos!
 
 A product catalog website for **Tan Bonitos!**, a handmade baby goods artisan brand from Argentina. Built as a freelance project to showcase their products and connect with customers via WhatsApp.
 
 ![Tan Bonitos!](images/social-share-card.webp)
 
-## 🌐 Live Site
+## Live Site
 
 **[tanbonitos.com](https://www.tanbonitos.com)** — Hosted on GitHub Pages
 
 ---
 
-## ✨ Features
+## Features
 
 - **Interactive Product Catalog** — Browse ajuares (baby outfits), accessories, and hair ties with optimized image galleries
 - **Product Detail Pages** — Dynamic pages with image thumbnails and WhatsApp contact integration
@@ -21,7 +21,7 @@ A product catalog website for **Tan Bonitos!**, a handmade baby goods artisan br
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 tan-bonitos/
@@ -53,7 +53,7 @@ tan-bonitos/
 
 ---
 
-## 🛠️ Development
+## Development
 
 ### Prerequisites
 
@@ -83,7 +83,7 @@ npm run sass:dev
 
 ---
 
-## 🎨 Design System
+## Design System
 
 ### Colors
 
@@ -108,17 +108,13 @@ npm run sass:dev
 
 ---
 
-## 📄 License
+## License
 
 MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-## 👤 Author
+## Author
 
 **Felipe Villada**  
 [felipevillada.com](https://www.felipevillada.com)
-
----
-
-*Built with 💜 in Argentina*
