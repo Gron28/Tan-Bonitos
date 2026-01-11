@@ -108,12 +108,6 @@ npm run sass:dev
 
 ---
 
-## License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
----
-
 ## Author
 
 **Felipe Villada**  
